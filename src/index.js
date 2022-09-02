@@ -1,15 +1,14 @@
 import "./styles/style.scss";
 import WINNING_COMBINATIONS from "./winningCombination";
-import PlaceMark from "./placeMark";
 
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
-const cellElements = document.querySelectorAll('[data-cell]');
+const cellElements = document.querySelectorAll(".board__cell");
 const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("win");
 const restartButton = document.getElementById("restartButton");
 const winningMessageTextElement = document.querySelector(
-  "[data-winning-message-text]"
+  ".win__winningMessage"
 );
 let circleTurn;
 

@@ -39,22 +39,22 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 70px;
+  font-size: 5rem;
   flex-direction: column;
 
-  button {
-    font-size: 46px;
+  .win__button {
+    font-size: 3rem;
     background-color: white;
     border: 1px solid black;
-    border-radius: 8px;
-    padding: 10px 8px;
+    padding: .25em .5em;
     cursor: pointer;
+    border-radius: 8px;
+  }
 
-    &:hover {
-      background-color: black;
-      color: white;
-      border-color: white;
-    }
+  &.win__button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
   }
 
   &.show {

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sever": "webpack-dev-server",
+    "server": "webpack-dev-server",
     "build": "webpack"
   },
   "keywords": [],
