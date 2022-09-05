@@ -17,7 +17,7 @@ body {
 }
 
 .board {
-  background: #14bdac;
+  background: #000000;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -39,22 +39,22 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 5rem;
+  font-size: 76px;
   flex-direction: column;
 
   .win__button {
-    font-size: 3rem;
+    font-size: 38px;
     background-color: white;
     border: 1px solid black;
-    padding: .25em .5em;
+    padding: 8px 10px;
     cursor: pointer;
     border-radius: 8px;
-  }
 
-  &.win__button:hover {
-    background-color: black;
-    color: white;
-    border-color: white;
+    &.win__button:hover {
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
   }
 
   &.show {

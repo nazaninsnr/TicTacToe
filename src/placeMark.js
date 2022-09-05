@@ -16,26 +16,6 @@ template.innerHTML = `
       position: relative;
       cursor: pointer;
     }
-    
-    // .board__cell:first-child,
-    // .board__cell:nth-child(2),
-    // .board__cell:nth-child(3) {
-    //   border-top: none;
-    // }
-
-    // .board__cell:nth-child(3n + 1) {
-    //   border-left: none;
-    // }
-
-    // .board__cell:nth-child(3n + 3) {
-    //   border-right: none;
-    // }
-
-    // .board__cell:last-child,
-    // .board__cell:nth-child(8),
-    // .board__cell:nth-child(7) {
-    //   border-bottom: none;
-    // }
 
     .board__cell.x,
     .board__cell.circle {
