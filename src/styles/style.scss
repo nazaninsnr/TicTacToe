@@ -17,7 +17,6 @@ body {
 }
 
 .board {
-  background: #000000;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -28,6 +27,131 @@ body {
   grid-template-columns: repeat(3, auto);
 }
 
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &:first-child,
+  &:nth-child(2),
+  &:nth-child(3) {
+    border-top: none;
+  }
+
+  &:first-child,
+  &:nth-child(4),
+  &:nth-child(7) {
+    border-left: none;
+  }
+
+  &:nth-child(3),
+  &:nth-child(6),
+  &:nth-child(9) {
+    border-right: none;
+  }
+
+  &:last-child,
+  &:nth-child(8),
+  &:nth-child(7) {
+    border-bottom: none;
+  }
+
+  &.x,
+  &.circle {
+    cursor: not-allowed;
+  }
+
+  &.x {
+    &::before,
+    &::after {
+      background-color: black;
+    }
+  }
+
+  &.circle::before {
+    background-color: black;
+  }
+}
+
+.board {
+  &.x .cell:not(.x):not(.circle):hover {
+    &::before,
+    &::after {
+      background-color: lightgrey;
+    }
+  }
+
+  &.circle .cell:not(.x):not(.circle):hover::before {
+    background-color: lightgrey;
+  }
+}
+
+.cell.x {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+  }
+}
+
+.board.x .cell:not(.x):not(.circle):hover {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+  }
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+.cell.circle {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+.board.circle .cell:not(.x):not(.circle):hover {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
+}
+
 .win {
   display: none;
   position: fixed;
@@ -35,22 +159,22 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #14bdac;
+  background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 76px;
+  font-size: 70px;
   flex-direction: column;
 
-  .win__button {
-    font-size: 38px;
+  button {
+    font-size: 46px;
     background-color: white;
     border: 1px solid black;
-    padding: 8px 10px;
-    cursor: pointer;
     border-radius: 8px;
+    padding: 10px 8px;
+    cursor: pointer;
 
-    &.win__button:hover {
+    &:hover {
       background-color: black;
       color: white;
       border-color: white;

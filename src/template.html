@@ -11,19 +11,19 @@
   </head>
   <body>
     <div class="board" id="board">
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
-      <place-mark></place-mark>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
     </div>
     <div class="win" id="win">
-      <div class="win__winningMessage"></div>
-      <button class="win__button" id="restartButton">Restart</button>
+      <div data-winning-message-text></div>
+      <button id="restartButton">Restart</button>
     </div>
   </body>
 </html>

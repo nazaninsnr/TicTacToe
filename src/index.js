@@ -3,12 +3,12 @@ import WINNING_COMBINATIONS from "./winningCombination";
 
 const X_CLASS = "x";
 const CIRCLE_CLASS = "circle";
-const cellElements = document.querySelectorAll(".board__cell");
+const cellElements = document.querySelectorAll("[data-cell]");
 const board = document.getElementById("board");
 const winningMessageElement = document.getElementById("win");
 const restartButton = document.getElementById("restartButton");
 const winningMessageTextElement = document.querySelector(
-  ".win__winningMessage"
+  "[data-winning-message-text]"
 );
 let circleTurn;
 
